@@ -1,0 +1,155 @@
+body {
+font-family: "Poppins", sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+background-color: #e4dccf;
+}
+
+.box {
+filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+/* transition:1s ease; */
+}
+
+
+.box__content a{
+border: 1px solid black;
+border-radius:5rem;
+padding:1rem;
+}
+
+
+.box__heading {
+justify-content:center;
+align-items:center;
+}
+.box__img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: top;
+border-radius: 0.875rem;
+}
+.box__heading1 {
+border-radius: 1rem;
+position: absolute;
+top: 8rem;
+left: 4.7rem;
+text-transform: uppercase;
+font-size: 2.5rem;
+line-height: 1;
+
+}
+.box__heading2 {
+border-radius: 1rem;
+position: absolute;
+top: 8rem;
+left: 2.8rem;
+text-transform: uppercase;
+font-size: 2.5rem;
+line-height: 1;
+}
+
+.box__heading3 {
+border-radius: 1rem;
+position: absolute;
+top: 8rem;
+left: 2rem;
+text-transform: uppercase;
+font-size: 2.5rem;
+line-height: 1;
+}
+/* hover */
+.box:hover .box__reveal {
+opacity: 1;
+}
+.box__reveal a{
+background-color:#ff2400;
+color:var(--light);
+}
+.box__reveal {
+position: absolute;
+top: 0;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-inline: 5rem;
+color: #fff;
+z-index: 2;
+opacity: 0;
+transition: opacity 0.3s;
+}
+.box::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 99.5%;
+background: rgba(0, 0, 0, 0.7) 0%;
+z-index: 1;
+opacity: 0;
+transition: opacity 0.3s; background 0.3s;
+transition:.3s ease;
+}
+/* overlay */
+.box:hover::before {
+opacity: 1;
+scale:.7;
+transition:.5s ease;
+}
+.overlay:before{
+content: "";
+position: absolute;
+top: 0;
+width: 100%;
+height: 99.3%;
+background: rgba(0, 0, 0, 0.7) 0%;
+z-index: 3;
+opacity: 1;
+transition: opacity 0.3s, background 0.3s;
+}
+.overlay {
+    
+}
+
+
+.overlay:hover:before{
+opacity: 0;
+transform: scale(0, -1);
+}
+/* REPEATABLE PATTERNS */
+.btn{
+    display:inline-block;
+    padding:1rem 1.5rem;
+    border-radius:5rem;
+    border:1px solid transparent;
+    text-align:center;
+    transition:.5s ease;
+    text-decoration:none;
+}
+.btn.bg--red{
+    background:#ff2400;
+    color:#ffffff;
+}
+.btn.bg--red:hover{
+background:#2b2b2b;
+border:1px solid #ffffff;
+scale:1.1;
+transition:.5s ease;
+} 
+/* Responsive */
+@media (max-width: 767px) {
+.box__content {
+width: 300px;
+height: 300px;
+}
+
+.box__heading {
+font-size: 1.5rem;
+}
+}
